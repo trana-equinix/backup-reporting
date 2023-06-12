@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Data</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Job Data</h1>
+    <table>
+        <tr>
+            <th>Client Name</th>
+            <th>Retention Period</th>
+            <th>Schedule Type</th>
+            <th>Schedule Name</th>
+            <th>Policy Type</th>
+            <th>Policy Name</th>
+            <th>Frequency Seconds</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item['Client Name'] }}</td>
+            <td>{{ item['Retention Period'] }}</td>
+            <td>{{ item['Schedule Type'] }}</td>
+            <td>{{ item['Schedule Name'] }}</td>
+            <td>{{ item['Policy Type'] }}</td>
+            <td>{{ item['Policy Name'] }}</td>
+            <td>{{ item['Frequency Seconds'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
